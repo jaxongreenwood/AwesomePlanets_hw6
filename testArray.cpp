@@ -74,12 +74,12 @@ TEST_CASE("Testing SuperArray class Regular indexes")
     {
         INFO("Test #1) Test Constructor FAILED");
         REQUIRE(arrayToString(sa) == "20 21 22 23 24");
-    }/*
+    }
 	SECTION("Test #2) Test low index")
 	{
 	    INFO("Test #2) Test low index FAILED");
 		REQUIRE(sa.getLowIndex() == low);
-	}
+	}/*
 	SECTION("Test #3) Test high index")
 	{
 	    INFO("Test #3) Test high index FAILED");
