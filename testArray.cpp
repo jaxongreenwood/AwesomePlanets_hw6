@@ -89,7 +89,7 @@ TEST_CASE("Testing SuperArray class Regular indexes")
 	{
 	    INFO("Test #4) Test length FAILED");
 		REQUIRE(sa.length() == 5);
-	}/*
+	}
 	SECTION("Test #5) Test valid index member")
 	{
 	    INFO("Test #5) Test valid index member FAILED");
@@ -105,9 +105,9 @@ TEST_CASE("Testing SuperArray class Regular indexes")
 	{
 	    INFO("Test #7) Test valid index member (too high) FAILED");
 		REQUIRE_THROWS_WITH(sa[9], "Invalid index request, too high");
-	}*/
-}/*
-TEST_CASE("Testing SuperArray class with super range")
+	}
+}
+/*TEST_CASE("Testing SuperArray class with super range")
 {
     INFO("Testing SuperArray class with super range");
     int low = 5;
@@ -137,7 +137,7 @@ TEST_CASE("Testing SuperArray class with super range")
     {
         INFO("Test #11) Test length FAILED");
         REQUIRE(sa.length() == 10);
-    }
+    }/*
     SECTION("Test #12) Test valid index member")
     {
         INFO("Test #12) Test valid index member FAILED");
@@ -153,8 +153,9 @@ TEST_CASE("Testing SuperArray class with super range")
     {
         INFO("Test #14 Test valid index member (too high) FAILED");
         REQUIRE_THROWS_WITH(sa[19], "Invalid index request, too high");
-    }
-}
+    }*/
+//}
+/*
 TEST_CASE("Testing SuperArray class Resize Feature")
  {
     INFO("Testing SuperArray class with super range");

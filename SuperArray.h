@@ -19,7 +19,7 @@ private:
 	int capacity;	// array capacity
 
 public:
-	//class OptIndexEx{};		// Exception class for operator
+	class OptIndexEx{};		// Exception class for operator
 	SuperArray(const int begIndex, const unsigned int capacity);
 	virtual ~SuperArray(); /* destructor */
 
