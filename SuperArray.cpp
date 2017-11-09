@@ -18,6 +18,8 @@ SuperArray::SuperArray(const int begIndex, const unsigned int capacity)
 	 */
 	arr = new int[capacity];
     SuperArray::capacity = capacity;
+    lowIndex = begIndex;
+    highIndex = capacity - 1;
 	// Other info below
 }
 
@@ -42,7 +44,7 @@ string arrayToString(const SuperArray& obj)
 
 	for (int i = 0; i < obj.capacity; i++)
     {
-        //cout << obj.arr[i] << " i " << i<<endl;
+        cout << obj.arr[i] << " i " << i<<endl;
         ss << obj.arr[i] << " ";
     }
 	string str = ss.str();
@@ -64,18 +66,24 @@ string arrayToString(const SuperArray& obj)
 int &SuperArray::operator[](const int index)
 {
 	int realIndex = index;
-	//
-	// Define your logic here
-	//
+    arr[realIndex] = index;
 	return arr[realIndex];
 }
 
 int SuperArray::getLowIndex() const
 {
+    cout << "Low index is: " << lowIndex << endl;
 	return lowIndex;
 }
 
 int SuperArray::getHighIndex() const
 {
+    cout << "High index is: " << highIndex << endl;
 	return highIndex;
+}
+
+unsigned int SuperArray::length() const
+{
+    cout << "Length is: " << capacity << endl;
+    return capacity;
 }
