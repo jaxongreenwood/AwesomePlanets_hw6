@@ -4,6 +4,8 @@
 //
 
 #include "SuperArray.h"
+#include <cstdint>
+#include <cstring>
 /*!
  * Constructor
  * @param begIndex User's low index
@@ -66,9 +68,9 @@ string arrayToString(const SuperArray& obj)
 int &SuperArray::operator[](const int index)
 {
 		int realIndex = index - lowIndex;
-		if (realIndex < lowIndex){
+		if (index < lowIndex){
 			throw "Invalid index request, too low";
-		}else if (realIndex > highIndex){
+		}else if (index > highIndex){
 			throw "Invalid index request, too high";
 		}
 		return arr[realIndex];
@@ -90,4 +92,23 @@ unsigned int SuperArray::length() const
 {
     cout << "Length is: " << capacity << endl;
     return capacity;
+}
+
+void SuperArray::resize(const int begIndex, const unsigned int capacity) {
+
+	cout << "Super Low index is: " << begIndex << endl;
+	cout << "Super high index is: " << (begIndex + capacity - 1) << endl;
+
+	int *temp = new int [capacity];
+	for (int i = begIndex; i <= arr[i]; i++){
+		temp[i] = arr[i];
+	}
+
+	delete[] arr;
+	*arr = *temp;
+
+	/*int *temp = new int[capacity];
+	memcpy(temp, arr, capacity);
+	delete[] arr;
+	*arr = *temp;*/
 }

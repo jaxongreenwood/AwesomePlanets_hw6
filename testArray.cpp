@@ -107,7 +107,7 @@ TEST_CASE("Testing SuperArray class Regular indexes")
 		REQUIRE_THROWS_WITH(sa[9], "Invalid index request, too high");
 	}
 }
-/*TEST_CASE("Testing SuperArray class with super range")
+TEST_CASE("Testing SuperArray class with super range")
 {
     INFO("Testing SuperArray class with super range");
     int low = 5;
@@ -137,7 +137,7 @@ TEST_CASE("Testing SuperArray class Regular indexes")
     {
         INFO("Test #11) Test length FAILED");
         REQUIRE(sa.length() == 10);
-    }/*
+    }
     SECTION("Test #12) Test valid index member")
     {
         INFO("Test #12) Test valid index member FAILED");
@@ -153,10 +153,10 @@ TEST_CASE("Testing SuperArray class Regular indexes")
     {
         INFO("Test #14 Test valid index member (too high) FAILED");
         REQUIRE_THROWS_WITH(sa[19], "Invalid index request, too high");
-    }*/
-//}
-/*
-TEST_CASE("Testing SuperArray class Resize Feature")
+    }
+}
+
+/*TEST_CASE("Testing SuperArray class Resize Feature")
  {
     INFO("Testing SuperArray class with super range");
     int low = 5;
@@ -178,7 +178,7 @@ TEST_CASE("Testing SuperArray class Resize Feature")
 	SECTION("Test #16) Test high index")
 	{
 	    INFO("Test #16) Test high index FAILED");
-		REQUIRE(sa.getHighIndex() == high - 1);
+		REQUIRE(sa.getHighIndex() == low + high - 1);
 	}
 	SECTION("Test #17) Test length")
 	{
@@ -234,7 +234,7 @@ TEST_CASE("Testing SuperArray class Resize Feature Negative Index")
     SECTION("Test #23) Test high index")
     { 
         INFO("Test #23) Test high index FAILED");
-        REQUIRE(sa.getHighIndex() == high - 1);
+        REQUIRE(sa.getHighIndex() == low + high - 1);
     }
     SECTION("Test #24) Test length")
     { 
@@ -269,7 +269,7 @@ TEST_CASE("Testing SuperArray class Resize Feature Negative Index")
         INFO("Test #28 Test valid index member (too high) FAILED");
         REQUIRE_THROWS_WITH(sa[25], "Invalid index request, too high");
     }
-}
+}*/
 TEST_CASE("Testing SuperArray Offseting array")
 {
     INFO("Testing SuperArray Offseting array");
@@ -352,4 +352,3 @@ TEST_CASE("Testing SuperArray 1 element")
         REQUIRE_THROWS_WITH(sa[4], "Invalid index request, too high");
     }
 }
-*/
