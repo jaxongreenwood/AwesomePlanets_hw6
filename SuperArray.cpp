@@ -46,7 +46,6 @@ string arrayToString(const SuperArray& obj)
 
 	for (int i = 0; i < obj.capacity; i++)
     {
-        cout << obj.arr[i] << " i " << i<<endl;
         ss << obj.arr[i] << " ";
     }
 	string str = ss.str();
@@ -76,41 +75,66 @@ int &SuperArray::operator[](const int index)
 		return arr[realIndex];
 }
 
+
+/*!
+ * Ask for low Index
+ * @return lowIndex
+ */
 int SuperArray::getLowIndex() const
 {
-    cout << "Low index is: " << lowIndex << endl;
 	return lowIndex;
 }
 
+
+/*!
+ * Ask for high Index
+ * @return highIndex
+ */
 int SuperArray::getHighIndex() const
 {
-    cout << "High index is: " << highIndex << endl;
 	return highIndex;
 }
 
+
+/*!
+ * Ask for capacity
+ * @return capacity
+ */
 unsigned int SuperArray::length() const
 {
-    cout << "Length is: " << capacity << endl;
     return capacity;
 }
 
+/*!
+ * Resizes the array by making a temporary array, copies values at the right index, then applies it to the existing array
+ * @param begIndex
+ * @param capacity
+ */
 void SuperArray::resize(const int begIndex, const unsigned int capacity) {
-
-	cout << "Super Low index is: " << begIndex << endl;
-	cout << "Super high index is: " << (begIndex + capacity - 1) << endl;
-
-    int tlowIndex = lowIndex - begIndex;
-
 
 	int *temp = new int [capacity];
 
-	for (int i = 0; i < SuperArray::capacity; i++){
-		temp[tlowIndex + i] = arr[i];
+	int tlowIndex = lowIndex;
+	int thighIndex = highIndex;
+
+	tlowIndex = lowIndex - begIndex;
+
+	for (int i = 0; i < lowIndex; i++){
+		*(temp + i) = 0;
 	}
 
+	for (int i = 0; i < SuperArray::capacity; i++){
+		temp[tlowIndex+i] = arr[i];
+	}
 
 	delete[] arr;
-    arr = temp;
+	arr = temp;
+
+	lowIndex = begIndex;
+	SuperArray::capacity = capacity;
+	highIndex = begIndex + capacity - 1;
+
+
 
 	/*int *temp = new int[capacity];
 	memcpy(temp, arr, capacity);
