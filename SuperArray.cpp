@@ -99,13 +99,18 @@ void SuperArray::resize(const int begIndex, const unsigned int capacity) {
 	cout << "Super Low index is: " << begIndex << endl;
 	cout << "Super high index is: " << (begIndex + capacity - 1) << endl;
 
+    int tlowIndex = lowIndex - begIndex;
+
+
 	int *temp = new int [capacity];
-	for (int i = begIndex; i <= arr[i]; i++){
-		temp[i] = arr[i];
+
+	for (int i = 0; i < SuperArray::capacity; i++){
+		temp[tlowIndex + i] = arr[i];
 	}
 
+
 	delete[] arr;
-	*arr = *temp;
+    arr = temp;
 
 	/*int *temp = new int[capacity];
 	memcpy(temp, arr, capacity);
